@@ -1,16 +1,16 @@
 module Metatools
 
-function replacesymbolwithvalue!(haystack::Expr, needle::Symbol, value)
+function replacesymbol!(haystack::Expr, needle::Symbol, replacement)
 	if typeof(haystack.head) == Expr
-		replacesymbolwithvalue!(haystack.head, needle, value)
+		replacesymbol!(haystack.head, needle, replacement)
 	elseif haystack.head == needle
-		haystack.head = value
+		haystack.head = replacement
 	end
 	for i = 1:length(haystack.args)
 		if typeof(haystack.args[i]) == Expr
-			replacesymbolwithvalue!(haystack.args[i], needle, value)
+			replacesymbol!(haystack.args[i], needle, replacement)
 		elseif haystack.args[i] == needle
-			haystack.args[i] = value
+			haystack.args[i] = replacement
 		end
 	end
 	return haystack
