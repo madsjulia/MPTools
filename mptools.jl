@@ -1,4 +1,4 @@
-module Metatools
+module MPTools
 
 function replacesymbol!(haystack::Expr, needle::Symbol, replacement)
 	if typeof(haystack.head) == Expr
