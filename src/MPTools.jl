@@ -21,6 +21,12 @@ function getsymbols(haystack::Expr)
 	return symbols
 end
 
+function populateexpression(haystack::Expr, vals::Dict)
+	newhaystack = deepcopy(haystack)
+	populateexpression!(newhaystack, vals::Dict)
+	return newhaystack
+end
+
 function populateexpression!(haystack::Expr, vals::Dict)
 	if typeof(haystack.head) == Expr
 		populateexpression!(haystack.head, vals)
@@ -38,6 +44,20 @@ function populateexpression!(haystack::Expr, vals::Dict)
 			end
 		end
 	end
+end
+
+function replacesymbol(haystack::Symbol, needle::Symbol, replacement)
+	if haystack == needle
+		return replacement
+	else
+		return haystack
+	end
+end
+
+function replacesymbol(haystack::Expr, needle::Symbol, replacement)
+	newhaystack = deepcopy(haystack)
+	replacesymbol!(newhaystack, needle, replacement)
+	return newhaystack
 end
 
 function replacesymbol!(haystack::Expr, needle::Symbol, replacement)
