@@ -1,17 +1,21 @@
 module MPTools
 
+function getsymbols(needle::Symbol)
+	return Set{Symbol}([needle])
+end
+
 function getsymbols(haystack::Expr)
 	symbols = Set{Symbol}()
 	if typeof(haystack.head) == Expr
-		merge!(symbols, getsymbols(haystack.head))
+		union!(symbols, getsymbols(haystack.head))
 	elseif typeof(haystack.head) == Symbol
-		push!(symbols, haystack.head)
+		union!(symbols, [haystack.head])
 	end
 	for i = 1:length(haystack.args)
 		if typeof(haystack.args[i]) == Expr
-			merge!(symbols, getsymbols(haystack.args[i]))
+			union!(symbols, getsymbols(haystack.args[i]))
 		elseif typeof(haystack.args[i]) == Symbol
-			push!(symbols, haystack.args[i])
+			union!(symbols, [haystack.args[i]])
 		end
 	end
 	return symbols
