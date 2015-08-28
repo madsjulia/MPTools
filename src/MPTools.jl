@@ -21,6 +21,12 @@ function getsymbols(haystack::Expr)
 	return symbols
 end
 
+function populateexpression(haystack::Symbol, vals::Dict)
+	if haskey(vals, string(haystack))
+		return :($(vals[string(haystack)]))
+	end
+end
+
 function populateexpression(haystack::Expr, vals::Dict)
 	newhaystack = deepcopy(haystack)
 	populateexpression!(newhaystack, vals::Dict)
