@@ -66,6 +66,10 @@ function replacesymbol(haystack::Expr, needle::Symbol, replacement)
 	return newhaystack
 end
 
+function replacesymbol(haystack::Number, needle::Symbol, replacement)
+	return haystack
+end
+
 function replacesymbol!(haystack::Expr, needle::Symbol, replacement)
 	if typeof(haystack.head) == Expr
 		replacesymbol!(haystack.head, needle, replacement)
