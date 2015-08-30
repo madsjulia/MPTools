@@ -1,5 +1,9 @@
 module MPTools
 
+function getsymbols(needle::Number)
+	return Set{Symbol}()
+end
+
 function getsymbols(needle::Symbol)
 	return Set{Symbol}([needle])
 end
