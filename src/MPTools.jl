@@ -29,7 +29,7 @@ PROCESS DISCLOSED, OR REPRESENTS THAT ITS USE WOULD NOT INFRINGE PRIVATELY OWNED
 
 LA-CC-15-080; Copyright Number Assigned: C16008
 """
-module MPTools
+module MetaProgTools
 
 function getsymbols(needle::Number)
 	return Set{Symbol}()
