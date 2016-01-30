@@ -31,6 +31,7 @@ LA-CC-15-080; Copyright Number Assigned: C16008
 """
 module MetaProgTools
 
+"Get symbols"
 function getsymbols(needle::Number)
 	return Set{Symbol}()
 end
@@ -56,6 +57,7 @@ function getsymbols(haystack::Expr)
 	return symbols
 end
 
+"Populate Expression"
 function populateexpression(haystack::Symbol, vals::Dict)
 	if haskey(vals, string(haystack))
 		return :($(vals[string(haystack)]))
@@ -87,6 +89,7 @@ function populateexpression!(haystack::Expr, vals::Dict)
 	end
 end
 
+"Replace Symbol"
 function replacesymbol(haystack::Symbol, needle::Symbol, replacement)
 	if haystack == needle
 		return replacement
@@ -121,6 +124,7 @@ function replacesymbol!(haystack::Expr, needle::Symbol, replacement)
 	return haystack
 end
 
+"Find a needle in a haystack"
 function in(needle, haystack::Expr)
 	if needle == haystack.head
 		return true
