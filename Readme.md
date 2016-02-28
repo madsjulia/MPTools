@@ -1,11 +1,11 @@
 MetaProgTools (Meta Programming Tools)
 =======================================
 
-[![MetaProgTools](http://pkg.julialang.org/badges/MetaProgTools_0.4.svg)](http://pkg.julialang.org/?pkg=Mads&ver=0.4)
+[![MetaProgTools](http://pkg.julialang.org/badges/MetaProgTools_0.4.svg)](http://pkg.julialang.org/?pkg=MetaProgTools&ver=0.4)
 
-[![Build Status](https://travis-ci.org/JuliaLang/MetaProgTools.jl.svg?branch=master)](https://travis-ci.org/JuliaLang/Mads.jl)
+[![Build Status](https://travis-ci.org/JuliaLang/MetaProgTools.jl.svg?branch=master)](https://travis-ci.org/JuliaLang/MetaProgTools.jl)
 
-[![Coverage Status](https://coveralls.io/repos/JuliaLang/MetaProgTools.jl/badge.svg?branch=master)](https://coveralls.io/r/JuliaLang/Mads.jl?branch=master)
+[![Coverage Status](https://coveralls.io/repos/JuliaLang/MetaProgTools.jl/badge.svg?branch=master)](https://coveralls.io/r/JuliaLang/MetaProgTools.jl?branch=master)
 
 MetaProgTools is a module of MADS. MADS (Model Analysis & Decision Support) is an open-source [Julia](http://julialang.org) code designed as an integrated high-performance computational framework performing a wide range of model-based analyses:
 
