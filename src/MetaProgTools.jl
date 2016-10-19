@@ -90,7 +90,7 @@ function populateexpression!(haystack::Expr, vals::Associative)
 end
 
 "Replace Symbol"
-function replacesymbol(haystack::Symbol, needle::Symbol, replacement)
+function replacesymbol(haystack::Symbol, needle::Symbol, replacement::Any)
 	if haystack == needle
 		return replacement
 	else
@@ -98,17 +98,17 @@ function replacesymbol(haystack::Symbol, needle::Symbol, replacement)
 	end
 end
 
-function replacesymbol(haystack::Expr, needle::Symbol, replacement)
+function replacesymbol(haystack::Expr, needle::Symbol, replacement::Any)
 	newhaystack = deepcopy(haystack)
 	replacesymbol!(newhaystack, needle, replacement)
 	return newhaystack
 end
 
-function replacesymbol(haystack::Number, needle::Symbol, replacement)
+function replacesymbol(haystack::Number, needle::Symbol, replacement::Any)
 	return haystack
 end
 
-function replacesymbol!(haystack::Expr, needle::Symbol, replacement)
+function replacesymbol!(haystack::Expr, needle::Symbol, replacement::Any)
 	if typeof(haystack.head) == Expr
 		replacesymbol!(haystack.head, needle, replacement)
 	elseif haystack.head == needle
@@ -125,7 +125,7 @@ function replacesymbol!(haystack::Expr, needle::Symbol, replacement)
 end
 
 "Find a needle in a haystack"
-function in(needle, haystack::Expr)
+function in(needle::Any, haystack::Expr)
 	if needle == haystack.head
 		return true
 	elseif typeof(haystack.head) == Expr
