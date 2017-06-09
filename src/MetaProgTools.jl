@@ -31,6 +31,14 @@ LA-CC-15-080; Copyright Number Assigned: C16008
 """
 module MetaProgTools
 
+function getargumentsymbols(funcdef)
+	return map(x->isa(x, Symbol) ? x : x.args[1], funcdef.args[1].args[2:end])
+end
+
+function getfunctionsymbol(funcdef)
+	return funcdef.args[1].args[1]
+end
+
 "Get symbols"
 function getsymbols(needle::Number)
 	return Set{Symbol}()
