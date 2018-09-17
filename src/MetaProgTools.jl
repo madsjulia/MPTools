@@ -66,19 +66,19 @@ function getsymbols(haystack::Expr)
 end
 
 "Populate Expression"
-function populateexpression(haystack::Symbol, vals::Associative)
+function populateexpression(haystack::Symbol, vals::AbstractDict)
 	if haskey(vals, string(haystack))
 		return :($(vals[string(haystack)]))
 	end
 end
 
-function populateexpression(haystack::Expr, vals::Associative)
+function populateexpression(haystack::Expr, vals::AbstractDict)
 	newhaystack = deepcopy(haystack)
 	populateexpression!(newhaystack, vals)
 	return newhaystack
 end
 
-function populateexpression!(haystack::Expr, vals::Associative)
+function populateexpression!(haystack::Expr, vals::AbstractDict)
 	if typeof(haystack.head) == Expr
 		populateexpression!(haystack.head, vals)
 	elseif typeof(haystack.head) == Symbol

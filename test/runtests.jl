@@ -1,3 +1,3 @@
-using Base.Test
+import Test
 
-@assert(1 == 1)
+@Test.assert(1 == 1)
