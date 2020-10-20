@@ -1,5 +1,5 @@
 MetaProgTools
-=======================================`
+=======================================
 
 Meta Programming Tools.
 MetaProgTools is a module of [MADS](http://madsjulia.github.io/Mads.jl).
