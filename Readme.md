@@ -1,11 +1,5 @@
 MetaProgTools
-=======================================
-
-[![MetaProgTools](http://pkg.julialang.org/badges/MetaProgTools_0.5.svg)](http://pkg.julialang.org/?pkg=MetaProgTools&ver=0.5)
-[![MetaProgTools](http://pkg.julialang.org/badges/MetaProgTools_0.6.svg)](http://pkg.julialang.org/?pkg=MetaProgTools&ver=0.6)
-[![MetaProgTools](http://pkg.julialang.org/badges/MetaProgTools_0.7.svg)](http://pkg.julialang.org/?pkg=MetaProgTools&ver=0.7)
-[![Build Status](https://travis-ci.org/madsjulia/MetaProgTools.jl.svg?branch=master)](https://travis-ci.org/madsjulia/MetaProgTools.jl)
-[![Coverage Status](https://coveralls.io/repos/madsjulia/MetaProgTools.jl/badge.svg?branch=master)](https://coveralls.io/r/madsjulia/MetaProgTools.jl?branch=master)
+=======================================`
 
 Meta Programming Tools.
 MetaProgTools is a module of [MADS](http://madsjulia.github.io/Mads.jl).
